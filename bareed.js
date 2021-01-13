@@ -43,12 +43,20 @@ class Point {
  **********************************************************/
 class Wallet {
   // implement Wallet!
-  constructor(money = 0) {}
+  constructor(money=0) {
+    this.money= money; 
+  }
 
-  credit = amount => {};
+  credit = amount => {
+    return this.money+=amount;
+ };
 
-  debit = amount => {};
+  debit = amount => {
+    return this.money-=amount;
+  };
 }
+const ans = new Wallet(10);
+
 
 /**********************************************************
  * Person: defines a person with a name (and feelings)
@@ -61,9 +69,22 @@ class Wallet {
  *
  * let person = new Person(name, x, y);
  **********************************************************/
-class Person {
-  // implement Person!
+class Person extends Point {
+  constructor(name,x,y,location) {
+    this.name= name;
+    this.location=location;
+    super(x,y) ;
+  }
+
+  moveTo=() =>  {
+    return this.equals=this.location;
 }
+}
+
+  /*debit = amount => {
+    return this.money-=amount;
+  };*/
+
 
 /**********************************************************
  * Vendor: defines a vendor
